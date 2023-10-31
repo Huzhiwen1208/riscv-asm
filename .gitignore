@@ -1,0 +1,7 @@
+*.o
+*.bin
+*.elf
+*.log
+*.i
+*tmp*
+.vscode
