@@ -284,3 +284,36 @@ bgeu rs1，rs2，imm
 ```
 
 ![](./images/cond_jmp.png)
+
+ # 加载指令
+ ## LOAD
+ ```s
+;----有符号加载字节----
+lb rd, offset(rs)
+;lb 加载字节指令
+;rd 目标寄存器
+;rs 源寄存器
+;offset 偏移量（-2048~2047）
+;功能：rd = byte [rs+offset]
+
+;----无符号加载字节----
+lbu rd,offset(rs)
+;lbu 无符号加载字节指令
+;rd 目标寄存器
+;rs 源寄存器
+;offset 立即数（-2048~2047）
+
+; 相同的还有lh, lhu, lw   ; h:双字节半字，w四字节字
+ ```
+
+ ![](./images/load.png)
+
+ ## STORE
+ ```s
+sb rd, offset(rs)
+;sb 储存字节指令
+;rd 目的寄存器
+;rs 源寄存器
+;offset 立即数（-2048~2047）
+;功能：rd的数据存储到 [offset+rs],  [offset+rs] = rd
+ ```

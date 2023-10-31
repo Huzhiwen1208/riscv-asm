@@ -38,6 +38,8 @@ void test_jalr_ins() {
 
 int beq_ins(int a, int b);
 
+int lrsc_ins(int* a,int b);
+
 int main()
 {
     int res = 0;
@@ -118,6 +120,10 @@ int main()
 
     res = beq_ins(4, 4);
     assert(res == 0);
+
+    int x = 15;
+    int lrsc_res = lrsc_ins(&x, 15);
+    assert(lrsc_res == 0);
 
     printf("all assertion passed\n");
     return 0;
