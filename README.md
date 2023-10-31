@@ -62,14 +62,14 @@ export PATH=/opt/riscv/qemu/bin:$PATH
 ## 立即数模式
 ```s
 addi rd, rs, imm
-#addi 立即数加法指令
-#rd 目标寄存器
-#rs 源寄存器
-#imm 立即数
+;addi 立即数加法指令
+;rd 目标寄存器
+;rs 源寄存器
+;imm 立即数
 
-#功能: rd = rs + imm
-#说明：imm∈[-2048, 2047], rd/rs为通用寄存器
-#如果imm超过范围，则会报错, 详情看源代码
+;功能: rd = rs + imm
+;说明：imm∈[-2048, 2047], rd/rs为通用寄存器
+;如果imm超过范围，则会报错, 详情看源代码
 ```
 ![](./images/addi-imm.png)
 由上图可以知道，imm取值范围为何是-2048~2047。寄存器33个使用5位，操作码的位数等信息。
@@ -78,15 +78,15 @@ addi rd, rs, imm
 ```s
 add rd，rs1，rs2
 ;add 加法指令
-#rd 目标寄存器
-#rs1 源寄存器1
-#rs2 源寄存器2
+;rd 目标寄存器
+;rs1 源寄存器1
+;rs2 源寄存器2;
 
-#功能：rd = rs1 + rs2
-#说明：rx为通用寄存器
+;功能：rd = rs1 + rs2
+;说明：rx为通用寄存器
 
 sub rd, rs1, rs2
-#功能：rd = rs1 - rs2
-#说明：rx为通用寄存器
+;功能：rd = rs1 - rs2
+;说明：rx为通用寄存器
 ```
 ![](./images/addi-reg.png)
