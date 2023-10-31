@@ -13,6 +13,14 @@ int sltiu_ins(int a);
 int slt_reg(int a, int b);
 int sltu_reg(int a, int b);
 
+int andi_ins(int a); // return a & 0xff
+int ori_ins(int a); // return a | 0xff
+int xori_ins(int a); // return a ^ 0xff
+
+int and_ins(int a, int b); // return a & b
+int or_ins(int a, int b); // return a | b
+int xor_ins(int a, int b); // return a ^ b
+
 int main()
 {
     int res = 0;
@@ -45,6 +53,24 @@ int main()
 
     res = sltu_reg(-100, -99); // unsigned(-100) 7c < unsigned(-99) 7d?
     assert(res == 1);
+
+    res = andi_ins(0x12345678);
+    assert(res == 0x78);
+
+    res = ori_ins(0x12345678);
+    assert(res == 0x123456ff);
+
+    res = xori_ins(0x12345678);
+    assert(res == 0x12345687);
+
+    res = and_ins(0x12345678, 0x87654321);
+    assert(res == 0x02244220);
+
+    res = or_ins(0x12345678, 0x87654321);
+    assert(res == 0x97755779);
+
+    res = xor_ins(0x12345678, 0x12345678);
+    assert(res == 0x0);
 
     printf("all assertion passed\n");
     return 0;

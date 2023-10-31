@@ -129,3 +129,56 @@ sltu rd，rs1，rs2
 ```
 
 ![](./images/cmp.png)
+
+# 算术指令-逻辑指令
+## 立即数模式和寄存器模式
+```s
+; -----按位与操作-----
+andi rd，rs，imm
+;andi 立即数按位与指令
+;rd 目标寄存器
+;rs 源寄存器
+;imm 立即数
+
+and rd，rs1，rs2
+;and 寄存器按位与指令
+;rd 目标寄存器
+;rs1 源寄存器1
+;rs2 源寄存器2
+
+; 功能：rd = rs & imm /  rd = rs1 & rs2
+```
+```s
+; -----按位或操作-----
+ori rd，rs，imm
+;ori 立即数按位或指令
+;rd 目标寄存器
+;rs 源寄存器
+;imm 立即数
+
+or rd，rs1，rs2
+;or 寄存器按位或指令
+;rd 目标寄存器
+;rs1 源寄存器1
+;rs2 源寄存器2
+
+; 功能：rd = rs | imm /  rd = rs1 | rs2
+```
+```s
+; -----按位异或操作-----
+xori rd，rs，imm
+;xori 立即数按位异或指令
+;rd 目标寄存器
+;rs 源寄存器
+;imm 立即数
+
+xor rd，rs1，rs2
+;xor 寄存器按位异或指令
+;rd 目标寄存器
+;rs1 源寄存器1
+;rs2 源寄存器2
+
+; 功能：rd = rs ^ imm /  rd = rs1 ^ rs2
+```
+
+![](./images/logic.png)
