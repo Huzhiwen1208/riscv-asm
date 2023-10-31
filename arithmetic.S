@@ -29,3 +29,36 @@ xori_ins:
 xor_ins:
     xor a0, a0, a1
     jr ra
+
+
+.globl slli_ins
+.globl sll_ins
+.globl srli_ins
+.globl srl_ins
+.globl srai_ins
+.globl sra_ins
+
+slli_ins:
+    slli a0, a0, 0x1
+    jr ra
+
+sll_ins:
+    sll a0, a0, a1
+    jr ra
+
+srli_ins:
+    srli a0, a0, 0x1
+    jr ra
+    
+srl_ins:
+    srl a0, a0, a1
+    jr ra
+
+srai_ins:
+    srai a0, a0, 0x1
+    jr ra
+
+sra_ins:
+    sra a0, a0, a1
+    jr ra
+    

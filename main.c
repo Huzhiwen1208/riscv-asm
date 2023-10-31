@@ -21,6 +21,14 @@ int and_ins(int a, int b); // return a & b
 int or_ins(int a, int b); // return a | b
 int xor_ins(int a, int b); // return a ^ b
 
+int slli_ins(int a); // return a << 1
+int srli_ins(int a); // return a >> 1
+int srai_ins(int a); // return a >> 1
+
+int sll_ins(int a, int b); // return a << b
+int srl_ins(int a, int b); // return a >> b
+int sra_ins(int a, int b); // return a >> b
+
 int main()
 {
     int res = 0;
@@ -71,6 +79,24 @@ int main()
 
     res = xor_ins(0x12345678, 0x12345678);
     assert(res == 0x0);
+
+    res = slli_ins(0x12345678);
+    assert(res == 0x2468acf0);
+
+    res = srli_ins(0x12345678);
+    assert(res == 0x091a2b3c);
+
+    res = srai_ins(0xf0000000);
+    assert(res == 0xf8000000);
+
+    res = sll_ins(0x12345678, 4);
+    assert(res == 0x23456780);
+
+    res = srl_ins(0x12345678, 4);
+    assert(res == 0x01234567);
+
+    res = sra_ins(0xf0000000, 4);
+    assert(res == 0xff000000);
 
     printf("all assertion passed\n");
     return 0;

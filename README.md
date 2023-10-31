@@ -182,3 +182,35 @@ xor rd，rs1，rs2
 ```
 
 ![](./images/logic.png)
+
+# 算术指令-移位指令
+## 立即数模式和寄存器模式
+**数据在逻辑右移之后左边多出空位用0填充，而数据在算术右移之后左边多出的空位是用数据的符号位填充**
+```s
+; ----逻辑左移----
+slli rd，rs，shamt
+;slli 立即数逻辑左移指令
+;rd 目标寄存器
+;rs 源寄存器
+;shamt 移位数，rs左移的位数，0~31
+
+sll rd，rs1，rs2
+;sll 寄存器逻辑左移指令
+;rd 目标寄存器
+;rs1 源寄存器1
+;rs2 源寄存器2，rs1左移的位数
+
+; ----逻辑右移----
+srli rd，rs1，shamt
+
+srl rd，rs1，rs2
+
+; ----算术右移----
+srai rd, rs, shamt
+
+sra rd, rs1, rs2
+
+;功能： rd = rs1 op rs2
+```
+
+![](./images/shift.png)
