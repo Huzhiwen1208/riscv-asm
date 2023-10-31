@@ -1,4 +1,4 @@
-# riscv-asm
+# riscv-asm-init
 ## 环境搭建
 > **机器选择：**[Deepin](https://mirrors.aliyun.com/deepin-cd/23-nightly/deepin-desktop-community-23-nightly-amd64.iso?spm=a2c6h.25603864.0.0.5b9922a8FpaOsD)
 ```shell
@@ -58,17 +58,35 @@ export PATH=/opt/riscv/qemu/bin:$PATH
 > Extra: PC
 
 
-
-
-
-
-
 # addi 立即数和寄存器模式
-## 立即数
+## 立即数模式
 ```s
 addi rd, rs, imm
+#addi 立即数加法指令
+#rd 目标寄存器
+#rs 源寄存器
+#imm 立即数
+
+#功能: rd = rs + imm
+#说明：imm∈[-2048, 2047], rd/rs为通用寄存器
+#如果imm超过范围，则会报错, 详情看源代码
 ```
----
-> 作用是：rd = rs + imm</br>
-> imm: 立即数，取值范围∈[-2048, 2047]</br>
-> rd, rs: 均为通用寄存器</br>
+![](./images/addi-imm.png)
+由上图可以知道，imm取值范围为何是-2048~2047。寄存器33个使用5位，操作码的位数等信息。
+
+## 寄存器模式
+```s
+add rd，rs1，rs2
+#add 加法指令
+#rd 目标寄存器
+#rs1 源寄存器1
+#rs2 源寄存器2
+
+#功能：rd = rs1 + rs2
+#说明：rx为通用寄存器
+
+sub rd, rs1, rs2
+#功能：rd = rs1 - rs2
+#说明：rx为通用寄存器
+```
+![](./images/addi-reg.png)
