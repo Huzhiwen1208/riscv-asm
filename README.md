@@ -214,3 +214,73 @@ sra rd, rs1, rs2
 ```
 
 ![](./images/shift.png)
+
+# 跳转指令
+## 无条件跳转指令
+```s
+; ----无条件跳转 立即数----
+jal rd，imm
+;jal 无条件的跳转并链接的指令
+;rd 目标寄存器
+;imm 立即数
+
+;功能：rd = pc + 4 / pc = 符号扩展(imm<<1)
+
+; ----无条件跳转 寄存器----
+jalr rd，rs，imm
+;jalr 无条件的跳转并链接的指令
+;rd 目标寄存器
+;rs 源寄存器
+;imm 立即数
+
+;功能：rd = pc + 4 / pc = (rs + 符号扩展(imm << 1)) & 0xfffffffe
+```
+
+![](./images/no_cond_jmp.png)
+
+## 条件跳转指令
+```s
+beq rs1，rs2，imm
+;beq 条件相等跳转指令
+;rs1 源寄存器1
+;rs2 源寄存器2
+;imm 立即数
+
+;功能：if rs1==rs2 pc => imm
+
+bne rs1，rs2，imm
+;bne 条件不等跳转指令
+;rs1 源寄存器1
+;rs2 源寄存器2
+;imm 立即数
+
+;功能：if rs1!=rs2 pc => imm
+
+blt rs1，rs2，imm
+;blt 条件小于跳转指令
+;rs1 源寄存器1
+;rs2 源寄存器2
+;imm 立即数
+
+bltu rs1，rs2，imm
+;bltu 无符号数条件小于跳转指令
+;rs1 源寄存器1
+;rs2 源寄存器2
+;imm 立即数
+;功能：if rs1 < rs2 pc => imm
+
+bge rs1，rs2，imm
+;bge 条件大于等于跳转指令
+;rs1 源寄存器1
+;rs2 源寄存器2
+;imm 立即数
+
+bgeu rs1，rs2，imm
+;bgeu 无符号数条件大于等于跳转指令
+;rs1 源寄存器1
+;rs2 源寄存器2
+;imm 立即数
+;功能：if rs1 > rs2 pc => imm
+```
+
+![](./images/cond_jmp.png)

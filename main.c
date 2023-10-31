@@ -29,6 +29,15 @@ int sll_ins(int a, int b); // return a << b
 int srl_ins(int a, int b); // return a >> b
 int sra_ins(int a, int b); // return a >> b
 
+int jal_ins();
+int jalr_ins(void* (*func)());
+
+void test_jalr_ins() {
+    printf("test_jalr_ins\n");
+}
+
+int beq_ins(int a, int b);
+
 int main()
 {
     int res = 0;
@@ -97,6 +106,18 @@ int main()
 
     res = sra_ins(0xf0000000, 4);
     assert(res == 0xff000000);
+
+    int option_address = jal_ins();
+    printf("jal_ins: %x\n", option_address);
+
+    option_address = jalr_ins(&test_jalr_ins);
+    printf("jalr_ins: %x\n", option_address);
+
+    res = beq_ins(4, 5);
+    assert(res == 1);
+
+    res = beq_ins(4, 4);
+    assert(res == 0);
 
     printf("all assertion passed\n");
     return 0;
