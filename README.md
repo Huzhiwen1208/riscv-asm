@@ -63,3 +63,12 @@ export PATH=/opt/riscv/qemu/bin:$PATH
 
 
 
+# addi 立即数和寄存器模式
+## 立即数
+```s
+addi rd, rs, imm
+```
+---
+> 作用是：rd = rs + imm</br>
+> imm: 立即数，取值范围∈[-2048, 2047]</br>
+> rd, rs: 均为通用寄存器</br>
