@@ -316,4 +316,6 @@ sb rd, offset(rs)
 ;rs 源寄存器
 ;offset 立即数（-2048~2047）
 ;功能：rd的数据存储到 [offset+rs],  [offset+rs] = rd
+
+;相同的还有 sh sw
  ```
