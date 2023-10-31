@@ -77,7 +77,7 @@ addi rd, rs, imm
 ## 寄存器模式
 ```s
 add rd，rs1，rs2
-#add 加法指令
+;add 加法指令
 #rd 目标寄存器
 #rs1 源寄存器1
 #rs2 源寄存器2
